@@ -1,9 +1,9 @@
-
+import "./Catalog.css";
 
 export function Catalog(){
 
 
-    return (<>
+    return (<section className="CatalogSection">
         
-    </>);
+    </section>);
 }
