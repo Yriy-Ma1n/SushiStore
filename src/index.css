@@ -6,15 +6,16 @@ body{
     margin: 0;
 
     --bgcColor: #000;
+    --bgcGreyColor: #1c1c1c;
     --whiteTextColor: #fff;
     --blacTextColor: #000;
-    --yellowColor: #ffa600;
-    --dYellowColor: #bf7e04;
+    --yellowColor: #ffa600e6;
+    --dYellowColor: #6b4f03ac;
     --redColor: #fa3d53;
     --limeColor: #0ce580;
     --dLimeColor: #01b354;
-    --dGreyTextColot: #7b7b7b;
-    --lGreyTextColot: #a8a8a8;
+    --dGreyTextColor: #7b7b7b;
+    --lGreyTextColor: #a8a8a8;
 
     
     --h1Size: 1.25rem;
@@ -25,4 +26,7 @@ body{
 
     --subtitleSize: 0.875rem;
     --subtitleWeight: 400;
+
+    --font: Plus Jakarta Sans;
+
 }
