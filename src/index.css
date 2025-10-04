@@ -1,6 +1,7 @@
 body, html{
     width: 100%;
     height: 100%;
+    background-color: var(--blacTextColor);
 }
 body{
     margin: 0;
@@ -9,7 +10,7 @@ body{
     --bgcGreyColor: #1c1c1c;
     --whiteTextColor: #fff;
     --blacTextColor: #000;
-    --yellowColor: #ffa600e6;
+    --yellowColor: #ffd900;
     --dYellowColor: #6b4f03ac;
     --redColor: #fa3d53;
     --limeColor: #0ce580;

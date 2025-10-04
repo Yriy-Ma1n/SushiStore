@@ -1,0 +1,81 @@
+.header {
+    display: flex;
+    padding: 10px 10px 0px 30px;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.WebSiteName {
+    color: white
+}
+
+.icon {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.icon img {
+    width: 55px;
+    height: 55px;
+}
+
+.icon h1 {
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+.navItem {
+    color: var(--lGreyTextColor);
+    display: flex;
+    font-size: 15px;
+    gap: 60px;
+    font-family: var(--font);
+    align-items: flex-end;
+    height: 80%;
+    margin: 0;
+}
+
+.navItem li {
+    cursor: pointer;
+    list-style: none;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+}
+
+.inputField {
+    position: relative;
+    color: var(--whiteTextColor)
+}
+
+.inputField input {
+    padding: 13px 10px 13px 40px;
+    background-color: var(--bgcGreyColor);
+    border: 0px;
+    border-radius: 10px;
+    color: var(--lGreyTextColor)
+}
+
+.inputField input::placeholder {
+    color: var(--lGreyTextColor)
+}
+
+.inputField span {
+    color: var(--lGreyTextColor);
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+
+.buttonOrder {
+    background-color: var(--yellowColor);
+    padding: 11px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 0px;
+}

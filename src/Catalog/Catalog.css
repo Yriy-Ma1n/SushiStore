@@ -1,4 +1,4 @@
 .CatalogSection{
-    height: 100%;
+    height: calc(100% - 75px);
     width: 100%;
 }
