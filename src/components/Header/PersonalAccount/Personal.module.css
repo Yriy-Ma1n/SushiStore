@@ -1,0 +1,6 @@
+.nfProfile{
+    padding: 5px;
+    background-color: var(--bgcGreyColor);
+    color:var(--lGreyTextColor);
+    border-radius: 10px;
+}
