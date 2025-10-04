@@ -17,11 +17,17 @@ export default function Header() {
             </ul>
         </div>
         <div className={styles.leftSide}>
-            <input
-                type="text"
-                placeholder="Search"
-                className={styles.searchInput}
-            />
+            <div className={styles.inputField}>
+                <span className="material-symbols-outlined">
+                    search
+                </span>
+                <input
+                    type="text"
+                    placeholder="Search"
+                    className={styles.searchInput}
+                />
+
+            </div>
             <button className={styles.buttonOrder}>Order Now</button>
             <PersonalAccount />
         </div>
