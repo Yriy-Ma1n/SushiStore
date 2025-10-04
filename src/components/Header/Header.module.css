@@ -28,9 +28,12 @@
 .navItem {
     color: var(--lGreyTextColor);
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
     gap: 60px;
-
+    font-family: var(--font);
+    align-items: flex-end;
+    height: 80%;
+    margin: 0;
 }
 
 .navItem li {
