@@ -1,0 +1,24 @@
+.WebSiteName {
+    color: white
+}
+
+.header {
+    display: flex;
+    padding: 10px 10px 0px 30px;
+}
+
+.icon {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.icon img {
+    width: 55px;
+    height: 55px;
+}
+
+.icon h1 {
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
