@@ -1,0 +1,43 @@
+.listFilter{
+    display: flex;
+    gap: 7px;
+    margin: 0;
+    list-style-type: none;
+}
+.filterElement, .OrangeFilterElement{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    max-height: 20px;
+    padding: 10px 14px;
+    border-radius: 7px;
+    font-family: var(--font);
+    cursor: pointer;
+}
+.filterElement{
+    background-color: var(--bgcGreyColor);
+}
+.OrangeFilterElement{
+    background-color: var(--dYellowColor);
+}
+.filterElement p, .OrangeFilterElement p{
+    font-size: var(--titleSize);
+    font-weight: var(--titleWeight);
+}
+.filterElement p{
+    color: var(--lGreyTextColor);
+}
+.OrangeFilterElement p{
+    color: var(--yellowColor);
+}
+.filterElement svg{
+    fill: var(--lGreyTextColor);
+    width: 12px;
+    height: 12px;
+}
+.OrangeFilterElement svg{
+    fill: var(--yellowColor);
+    width: 12px;
+    height: 12px;
+}
