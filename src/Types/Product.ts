@@ -7,5 +7,6 @@ export interface Product {
     img: string,
     description: string,
     created_at: string,
-    products_attributes: attribute[]
+    products_attributes: attribute[],
+    popular:boolean
 }
