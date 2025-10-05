@@ -6,6 +6,9 @@ export function Catalog(){
 
 
     return (<div className="CatalogSection">
-        <FilterCatalog/>
+        <div className="filterZone">
+            <h1>Sushi</h1>
+            <FilterCatalog/>
+        </div>
     </div>);
 }
