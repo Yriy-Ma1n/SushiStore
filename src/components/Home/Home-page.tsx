@@ -1,4 +1,5 @@
 import { Catalog } from "../../Catalog/Catalog";
+import Recomendations from "../Recomendation/RecomendationTovars";
 import style from "./Home-page.module.css"
 
 export default function HomePage() {
@@ -11,6 +12,7 @@ export default function HomePage() {
                     <h1>Fresh Sushi Delivered to Your Door</h1>
                 </div>
             </div>
+            <Recomendations/>
         </main>
     </>
 }
