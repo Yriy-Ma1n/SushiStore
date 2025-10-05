@@ -1,6 +1,7 @@
-.mainButtonSection{
+.mainButtonSection {
     width: 60%;
 }
+
 .buttonSection {
     display: flex;
     gap: 15px;
@@ -23,3 +24,12 @@
     color: var(--whiteTextColor)
 }
 
+.gridTiles {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    
+}
