@@ -1,13 +1,25 @@
 import './App.css'
-import { Catalog } from './Catalog/Catalog'
 import Header from './components/Header/Header'
+import { Provider } from 'react-redux'
+import { store } from './store'
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import HomePage from './components/Home/Home-page'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomePage />
+  }
+])
 
 function App() {
 
   return (
     <>
-      <Header />
-      <Catalog />
+      <Provider store={store}>
+        <Header />
+        <RouterProvider router={router} />
+      </Provider>
     </>
   )
 }
