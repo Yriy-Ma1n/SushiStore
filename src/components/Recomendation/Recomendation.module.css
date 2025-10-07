@@ -1,0 +1,47 @@
+.mainButtonSection {
+    width: 60%;
+}
+
+.buttonSection {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.buttonSection button {
+    color: var(--lGreyTextColor);
+    padding: 12px 25px;
+    border-radius: 25px;
+    background-color: var(--bgcGreyColor);
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.buttonSection button.selected {
+    background-color: var(--redColor);
+    color: var(--whiteTextColor)
+}
+
+.gridTiles {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+
+}
+
+.pagination {
+    color: var(--lGreyTextColor);
+    display: flex;
+    justify-content: center;
+}
+
+.paginationCount {
+    display: flex;
+    gap: 10px
+}
+

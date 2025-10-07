@@ -1,0 +1,26 @@
+.productContainer {
+    cursor: pointer;
+}
+
+.name {
+    color: var(--whiteTextColor);
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: var(--font);
+    height: 10%;
+}
+
+.img {
+    border-radius: 10px;
+    width: 100%;
+    object-fit: contain;
+    height: 70%;
+}
+
+.shortDesc {
+    color: var(--lGreyTextColor);
+    font-family: var(--font);
+    font-size: 12px;
+    height: 10%;
+}

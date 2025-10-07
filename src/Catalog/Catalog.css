@@ -1,4 +1,5 @@
 .CatalogSection{
+<<<<<<< HEAD
     height: calc(100% - 75px);
     padding: 0 40px;
 }
@@ -12,4 +13,8 @@
     font-family: var(--font);
     font-size: var(--h1Size);
     font-weight: var(--h1Weight);
+=======
+    height: calc(100% - 95px);
+    width: 100%;
+>>>>>>> main
 }
