@@ -4,11 +4,17 @@ import { Provider } from 'react-redux'
 import { store } from './store'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import HomePage from './components/Home/Home-page'
+import { Catalog } from './Catalog/Catalog'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />
+  },
+
+  {
+    path: '/Catalog',
+    element: <Catalog/>
   }
 ])
 
