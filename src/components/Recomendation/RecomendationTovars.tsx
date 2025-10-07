@@ -4,6 +4,7 @@ import ProductTile from "../ProductTile/ProductTile"
 import type { Product } from "../../Types/Product"
 import PaginationMainPage from "./Pagination/Pagination"
 let backupArr: Product[] = []
+let currCategoryBackUp: Product[] = []
 
 export default function Recomendations() {
     const [name, setName] = useState('All')
@@ -21,7 +22,7 @@ export default function Recomendations() {
 
         } else if (text === 'All') {
 
-            setProducts(backupArr)
+            setProducts(currCategoryBackUp)
 
         } else if (text === 'New Arrivals') {
             const now = new Date();
@@ -46,17 +47,19 @@ export default function Recomendations() {
         fetch(`http://localhost:3000/products`)
             .then(res => res.json())
             .then(data => {
-                setProducts(data.slice(0, 8))
+                const firstItem = data.slice(0, 8)
+                setProducts(firstItem)
                 backupArr = data
+                currCategoryBackUp = firstItem
             })
 
     }, [])
 
 
     const setPage = (i: number) => {
-        setProducts(backupArr.slice(8 * i - 8 , 8 * i))
-        console.log('next page')
-        console.log(i)
+        const arr = backupArr.slice(8 * i - 8, 8 * i)
+        setProducts(arr)
+        currCategoryBackUp = arr
     }
 
 
