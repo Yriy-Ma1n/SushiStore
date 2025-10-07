@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import styles from "./Recomendation.module.css"
 import ProductTile from "../ProductTile/ProductTile"
 import type { Product } from "../../Types/Product"
+import PaginationMainPage from "./Pagination/Pagination"
 let backupArr: Product[] = []
 
 export default function Recomendations() {
@@ -13,8 +14,11 @@ export default function Recomendations() {
     const changeTypeOfSection = (event: React.MouseEvent) => {
 
         const text = (event.target as HTMLButtonElement).textContent
+
         if (text === 'Popular') {
+
             setProducts(products.filter(item => item.popular))
+
         } else if (text === 'All') {
 
             setProducts(backupArr)
@@ -29,7 +33,7 @@ export default function Recomendations() {
                 return diffDays < 7 ? item : false
 
             })
-            
+
             setProducts(newdata)
         }
 
@@ -42,11 +46,18 @@ export default function Recomendations() {
         fetch(`http://localhost:3000/products`)
             .then(res => res.json())
             .then(data => {
-                setProducts(data)
+                setProducts(data.slice(0, 8))
                 backupArr = data
-
             })
+
     }, [])
+
+
+    const setPage = (i: number) => {
+        console.log('next page')
+        console.log(i)
+    }
+
 
 
     return <div className={styles.mainButtonSection}>
@@ -65,5 +76,22 @@ export default function Recomendations() {
                     shortDesc={item.description.slice(0, 30)} />
             })}
         </div>
+        {
+        products.length < 8
+            ? null
+            : <div className={styles.pagination}>
+                <span className="material-symbols-outlined">
+                    arrow_back_ios
+                </span>
+
+              
+                <PaginationMainPage backupArr={backupArr} setPage={setPage}/>
+
+                <span className="material-symbols-outlined">
+                    arrow_forward_ios
+                </span>
+
+            </div>}
+
     </div>
 }
