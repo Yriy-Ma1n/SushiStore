@@ -1,0 +1,34 @@
+.productCardBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+}
+.productCardBlock img{
+    border: 1px solid #fff;
+    border-radius: 12px;
+    width: 100%;
+    height: 260px;
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+.information p{
+    padding: 0;
+    margin: 0;
+    font-family: var(--font);
+}
+.title{
+    color: var(--whiteTextColor);
+    font-size: var(--titleSize);
+    font-weight: var(--titleWeight);
+}
+.subtitle{
+    color: var(--dGreyTextColor);
+    font-size: var(--subtitleSize);
+    font-weight: var(--subtitleWeight);
+}

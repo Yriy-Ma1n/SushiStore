@@ -1,4 +1,15 @@
 .CatalogSection{
-    height: calc(100% - 95px);
-    width: 100%;
+    height: calc(100% - 75px);
+    padding: 0 40px;
+}
+.filterZone{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.filterZone h1{
+    color: var(--whiteTextColor);
+    font-family: var(--font);
+    font-size: var(--h1Size);
+    font-weight: var(--h1Weight);
 }
