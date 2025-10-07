@@ -54,6 +54,7 @@ export default function Recomendations() {
 
 
     const setPage = (i: number) => {
+        setProducts(backupArr.slice(8 * i - 8 , 8 * i))
         console.log('next page')
         console.log(i)
     }
@@ -77,21 +78,21 @@ export default function Recomendations() {
             })}
         </div>
         {
-        products.length < 8
-            ? null
-            : <div className={styles.pagination}>
-                <span className="material-symbols-outlined">
-                    arrow_back_ios
-                </span>
+            backupArr.length < 8
+                ? null
+                : <div className={styles.pagination}>
+                    <span className="material-symbols-outlined">
+                        arrow_back_ios
+                    </span>
 
-              
-                <PaginationMainPage backupArr={backupArr} setPage={setPage}/>
 
-                <span className="material-symbols-outlined">
-                    arrow_forward_ios
-                </span>
+                    <PaginationMainPage backupArr={backupArr} setPage={setPage} />
 
-            </div>}
+                    <span className="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+
+                </div>}
 
     </div>
 }
