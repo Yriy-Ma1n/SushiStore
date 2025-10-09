@@ -17,7 +17,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 50px;
+    justify-content: start;
+    gap: 29px;
     width: 100%;
 }
