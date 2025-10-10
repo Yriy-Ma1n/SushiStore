@@ -21,3 +21,41 @@
     gap: 29px;
     width: 100%;
 }
+.catalogPagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 20px;
+}
+.arrowLeft, .arrowRight{
+    background-color: var(--bgcGreyColor);
+    color: var(--lGreyTextColor);
+    font-family: var(--font);
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.disable{
+    background-color: var(--bgcGreyColor);
+    color: var(--lGreyTextColor);
+    font-family: var(--font);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.active{
+    background-color: var(--dYellowColor);
+    color: var(--yellowColor);
+    font-family: var(--font);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
