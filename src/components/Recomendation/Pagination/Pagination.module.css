@@ -1,18 +1,9 @@
-.paginationCount{
+.pagination {
+    color: var(--lGreyTextColor);
     display: flex;
-    gap:10px
+    justify-content: center;
+    gap:20px;
 }
-.paginationCount button {
-    padding: 5px 10px;
-    border-radius: 20px;
-    border: none;
+.pagination span{
     cursor: pointer;
-    color: var(--whiteTextColor);
-    background-color: var(--bgcGreyColor);
-}
-
-
-.paginationCount button.selected {
-    color: var(--whiteTextColor);
-    background-color: var(--redColor);
 }
