@@ -5,6 +5,7 @@ import { store } from './store'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import HomePage from './components/Home/Home-page'
 import { Catalog } from './Catalog/Catalog'
+import FooterPart from './components/Footer/Footer'
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
 
   {
     path: '/Catalog',
-    element: <Catalog/>
+    element: <Catalog />
   }
 ])
 
@@ -25,6 +26,7 @@ function App() {
       <Provider store={store}>
         <Header />
         <RouterProvider router={router} />
+        <FooterPart />
       </Provider>
     </>
   )
