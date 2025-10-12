@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import styles from "./Recomendation.module.css"
 import ProductTile from "../ProductTile/ProductTile"
 import type { Product } from "../../Types/Product"
-import PaginationMainPage from "./Pagination/Pagination"
+import PaginationMainPage from "./PaginationCount/Pagination"
 let backupArr: Product[] = []
 let currCategoryBackUp: Product[] = []
 
