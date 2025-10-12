@@ -6,11 +6,23 @@ export default function PaginationMainPage(props: { backupArr: Product[], setPag
     const [current, setCurrent] = useState(1)
 
     const nextPrevPage = (i: number) => {
-        props.setPage(i + 1);
-        setCurrent(() => i + 1)
+        props.setPage(i);
+        setCurrent(() => i)
     }
 
+    const turnLeft = () => {
+        nextPrevPage(current - 1)
+    }
+
+    const turnRight = () => {
+        nextPrevPage(current + 1)
+    }
+
+
     return <div className={styles.paginationCount}>
+        <span className="material-symbols-outlined" onClick={turnLeft}>
+            arrow_back_ios
+        </span>
         {
             Array.from({ length: Math.ceil(props.backupArr.length / 8) }, (_, i) => (
                 <button key={i} onClick={() => { nextPrevPage(i) }} className={i + 1 === current ? styles.selected : ''}>
@@ -18,6 +30,10 @@ export default function PaginationMainPage(props: { backupArr: Product[], setPag
                 </button>
             ))
         }
+
+        <span className="material-symbols-outlined" onClick={turnRight}>
+            arrow_forward_ios
+        </span>
 
     </div>
 }
