@@ -1,7 +1,6 @@
-import React from "react";
 import PaginationMainPage from "./Pagination";
 import { expect, test } from "vitest"
-import { render, screen } from "@testing-library/react"
+import { render } from "@testing-library/react"
 import type { Product } from "../../../Types/Product";
 
 
