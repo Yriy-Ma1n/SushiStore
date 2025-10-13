@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import styles from "./Recomendation.module.css"
 import ProductTile from "../ProductTile/ProductTile"
 import type { Product } from "../../Types/Product"
-import Pagination from "./Pagination/Pagination"
+import PaginationMainPage from "./PaginationCount/Pagination"
 let backupArr: Product[] = []
 let currCategoryBackUp: Product[] = []
 
@@ -83,7 +83,8 @@ export default function Recomendations() {
         {
             backupArr.length < 8
                 ? null
-                : <Pagination backupArr={backupArr} setPage={setPage} />
+                : <PaginationMainPage backupArr={backupArr} setPage={setPage} />
+
         }
 
     </div>

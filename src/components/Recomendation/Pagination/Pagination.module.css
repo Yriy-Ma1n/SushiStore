@@ -1,9 +1,0 @@
-.pagination {
-    color: var(--lGreyTextColor);
-    display: flex;
-    justify-content: center;
-    gap:20px;
-}
-.pagination span{
-    cursor: pointer;
-}

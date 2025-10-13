@@ -7,21 +7,23 @@ export default function PaginationMainPage(props: { backupArr: Product[], setPag
     const pages = Math.ceil(props.backupArr.length / 8)
 
     const nextPrevPage = (i: number) => {
-        props.setPage(i);
-        setCurrent(() => i)
+        const nextPage = i + 1
+        props.setPage(nextPage);
+        setCurrent(() => nextPage)
     }
 
     const turnLeft = () => {
-        const currentPage = current - 1
-        if(1 === current) return
-        nextPrevPage(currentPage)
+       
+        if (1 === current) return
+        nextPrevPage(current - 2)
+
     }
 
     const turnRight = () => {
-        const currentPage = current + 1
-        if(pages === current) return
-        nextPrevPage(currentPage)
-       
+
+        if (pages === current) return
+        nextPrevPage(current)
+
     }
 
 
