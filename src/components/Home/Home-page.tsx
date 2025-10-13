@@ -1,4 +1,3 @@
-import { Catalog } from "../../Catalog/Catalog";
 import Recomendations from "../Recomendation/RecomendationTovars";
 import style from "./Home-page.module.css"
 
