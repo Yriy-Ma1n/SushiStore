@@ -1,7 +1,16 @@
-.paginationCount{
+.paginationCount {
+    color: var(--lGreyTextColor);
     display: flex;
-    gap:10px
+    justify-content: center;
+    gap: 20px;
+    user-select: none;
 }
+
+.paginationCount span {
+    cursor: pointer;
+    
+}
+
 .paginationCount button {
     padding: 5px 10px;
     border-radius: 20px;
