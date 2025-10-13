@@ -4,6 +4,7 @@ import styles from './Pagination.module.css'
 
 export default function PaginationMainPage(props: { backupArr: Product[], setPage: (i: number) => void }) {
     const [current, setCurrent] = useState(1)
+    const pages = Math.ceil(props.backupArr.length / 8)
 
     const nextPrevPage = (i: number) => {
         props.setPage(i);
@@ -11,11 +12,17 @@ export default function PaginationMainPage(props: { backupArr: Product[], setPag
     }
 
     const turnLeft = () => {
-        nextPrevPage(current - 1)
+        const currentPage = current - 1
+        console.log(current)
+        if(1 === current) return
+        nextPrevPage(currentPage)
     }
 
     const turnRight = () => {
-        nextPrevPage(current + 1)
+        const currentPage = current + 1
+        if(pages === current) return
+        nextPrevPage(currentPage)
+       
     }
 
 
