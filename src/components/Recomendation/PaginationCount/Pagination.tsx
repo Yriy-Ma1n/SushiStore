@@ -13,7 +13,6 @@ export default function PaginationMainPage(props: { backupArr: Product[], setPag
 
     const turnLeft = () => {
         const currentPage = current - 1
-        console.log(current)
         if(1 === current) return
         nextPrevPage(currentPage)
     }
