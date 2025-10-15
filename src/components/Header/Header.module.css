@@ -6,7 +6,8 @@
 }
 
 .WebSiteName {
-    color: white
+    color: white;
+    font-family: var(--font);
 }
 
 .icon {
