@@ -12,12 +12,9 @@ export default function Header() {
         </div>
         <div className={styles.nav}>
             <ul className={styles.navItem}>
-                <li>Menu</li>
-                
-                    <li><Link to="/Catalog">Catalog</Link></li>
-                
-
-                <li>About</li>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to="/Catalog">Catalog</Link></li>
+                <li><Link to='/About'>About</Link></li>
             </ul>
         </div>
         <div className={styles.leftSide}>

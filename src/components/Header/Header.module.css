@@ -38,8 +38,13 @@
 }
 
 .navItem li {
-    cursor: pointer;
     list-style: none;
+}
+
+.navItem li a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--lGreyTextColor)
 }
 
 .leftSide {
