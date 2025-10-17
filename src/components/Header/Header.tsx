@@ -1,6 +1,7 @@
 import styles from "./Header.module.css"
 import PersonalAccount from "./PersonalAccount/Personal"
 import sushiImage from "../../assets/sushi.png"
+import { Link } from "react-router-dom"
 
 export default function Header() {
 
@@ -12,7 +13,10 @@ export default function Header() {
         <div className={styles.nav}>
             <ul className={styles.navItem}>
                 <li>Menu</li>
-                <li>Catalog</li>
+                
+                    <li><Link to="/Catalog">Catalog</Link></li>
+                
+
                 <li>About</li>
             </ul>
         </div>
