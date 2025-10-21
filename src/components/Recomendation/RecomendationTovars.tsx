@@ -3,6 +3,7 @@ import styles from "./Recomendation.module.css"
 import ProductTile from "../ProductTile/ProductTile"
 import type { Product } from "../../Types/Product"
 import PaginationMainPage from "./PaginationCount/Pagination"
+import { Link } from "react-router-dom"
 let backupArr: Product[] = []
 let currCategoryBackUp: Product[] = []
 
@@ -27,7 +28,7 @@ export default function Recomendations() {
         } else if (text === 'New Arrivals') {
             const now = new Date();
 
-            const newdata = backupArr.filter(item => {
+            const newdata = currCategoryBackUp.filter(item => {
                 const DataBasedate = new Date(item.created_at);
                 const differentMs = now.getTime() - DataBasedate.getTime()
                 const diffDays = differentMs / (1000 * 60 * 60 * 24);
@@ -51,6 +52,7 @@ export default function Recomendations() {
                 setProducts(firstItem)
                 backupArr = data
                 currCategoryBackUp = firstItem
+                
             })
 
     }, [])
@@ -73,11 +75,13 @@ export default function Recomendations() {
         </div>
         <div className={styles.gridTiles}>
             {products.map(item => {
-                return <ProductTile
-                    key={item.id}
-                    img={item.img}
-                    name={item.name}
-                    shortDesc={item.description.slice(0, 30)} />
+                return <Link to={`/product/${item.id}`} key={item.id}>
+                    <ProductTile
+                        img={item.img}
+                        name={item.name}
+                        shortDesc={item.description.slice(0, 30)}
+                    />
+                </Link>
             })}
         </div>
         {

@@ -1,5 +1,9 @@
+a{
+    text-decoration: none ;
+}
+
 .productContainer {
-    cursor: pointer;
+    cursor: pointer;  
 }
 
 .name {
