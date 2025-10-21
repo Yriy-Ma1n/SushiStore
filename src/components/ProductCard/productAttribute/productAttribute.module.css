@@ -1,0 +1,8 @@
+.containerDesc {
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.2px solid var(--lGreyTextColor);
+    border-bottom: 0.2px solid var(--lGreyTextColor);
+    padding: 0px 30px;
+    font-family: var(--font);
+}

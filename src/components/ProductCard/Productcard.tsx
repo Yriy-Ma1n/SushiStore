@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import type { Product } from "../../Types/Product"
 import styles from "./Productcart.module.css"
+import ProductAttribute from "./productAttribute/productAttribute"
 
 export default function ProductCart() {
     const { id } = useParams()
@@ -26,7 +27,8 @@ export default function ProductCart() {
                     <h1 className={styles.name}>{product?.name}</h1>
                     <p className={styles.description}>{product?.description}</p>
                     <div className={styles.largeDesc}>
-                        {product?.products_attributes.map(item => {
+                        <ProductAttribute attribute={product?.products_attributes!}/>
+                        {/* {product?.products_attributes.map(item => {
                             return <div key={item.attribute_id} className={styles.containerDesc}>
                                 <p className={styles.leftDesc}>
                                     {item.name_of_attribute}
@@ -35,7 +37,7 @@ export default function ProductCart() {
                                     {item.value} {item.value.length === 2 ? 'Шт' : 'Грам'}
                                 </p>
                             </div>
-                        })}
+                        })} */}
                     </div>
                     <div className={styles.costBuy}>
                         <h1>{product?.price} Грн</h1>
