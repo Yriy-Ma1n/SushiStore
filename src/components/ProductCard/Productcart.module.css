@@ -44,8 +44,6 @@
     align-items: center;
 }
 
-.price {}
-
 .buy {
     background-color: var(--redColor);
     padding: 0px 25px 0px 25px;

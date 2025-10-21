@@ -1,5 +1,4 @@
 import './App.css'
-import Header from './components/Header/Header'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
