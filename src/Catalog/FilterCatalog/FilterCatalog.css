@@ -1,10 +1,39 @@
-.listFilter{
+.listFilter {
     display: flex;
-    gap: 7px;
+    gap: 10px;
     margin: 0;
     list-style-type: none;
 }
-.filterElement, .OrangeFilterElement{
+.listFilter li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.fakeSpace {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 10px;
+}
+.drop-downElement {
+    position: absolute;
+    z-index: 5;
+    top: 50px;
+    color: var(--lGreyTextColor);
+    background-color: var(--bgcGreyColor);
+    font-size: var(--titleSize);
+    font-weight: var(--titleWeight);
+    font-family: var(--font);
+    border-radius: 7px;
+    padding: 10px 14px;
+    width: 300px;
+    height: 250px;
+    cursor: pointer;
+}
+.filterElement,
+.OrangeFilterElement {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,28 +44,29 @@
     font-family: var(--font);
     cursor: pointer;
 }
-.filterElement{
+.filterElement {
     background-color: var(--bgcGreyColor);
 }
-.OrangeFilterElement{
+.OrangeFilterElement {
     background-color: var(--dYellowColor);
 }
-.filterElement p, .OrangeFilterElement p{
+.filterElement p,
+.OrangeFilterElement p {
     font-size: var(--titleSize);
     font-weight: var(--titleWeight);
 }
-.filterElement p{
+.filterElement p {
     color: var(--lGreyTextColor);
 }
-.OrangeFilterElement p{
+.OrangeFilterElement p {
     color: var(--yellowColor);
 }
-.filterElement svg{
+.filterElement svg {
     fill: var(--lGreyTextColor);
     width: 12px;
     height: 12px;
 }
-.OrangeFilterElement svg{
+.OrangeFilterElement svg {
     fill: var(--yellowColor);
     width: 12px;
     height: 12px;
