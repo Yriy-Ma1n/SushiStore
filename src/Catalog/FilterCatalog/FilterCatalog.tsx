@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./FilterCatalog.css";
+import "./DropElement.css";
 
 export function FilterCatalog() {
+  //для отоброжения выпадающего окна
   const [displayPrice, setDisplayPrice] = useState("none");
   const [displayCategory, setDisplayCategory] = useState("none");
   const [displayFilling, setDisplayFilling] = useState("none");
@@ -34,7 +36,12 @@ export function FilterCatalog() {
           </span>
           <div className="fakeSpace"></div>
           <div style={{ display: displayPrice }} className="drop-downElement">
-            Andrusha
+            <div className="inputBlock">
+              <input placeholder="min" type="text" />
+              <input placeholder="max" type="text" />
+            </div>
+
+            <button className="drop-downElementAccept">Accept</button>
           </div>
         </li>
 
@@ -64,7 +71,7 @@ export function FilterCatalog() {
             style={{ display: displayCategory }}
             className="drop-downElement"
           >
-            Andrusha
+            <button className="drop-downElementAccept">Accept</button>
           </div>
         </li>
 
@@ -91,7 +98,7 @@ export function FilterCatalog() {
           </span>
           <div className="fakeSpace"></div>
           <div style={{ display: displayFilling }} className="drop-downElement">
-            Andrusha
+            <button className="drop-downElementAccept">Accept</button>
           </div>
         </li>
 
@@ -118,7 +125,7 @@ export function FilterCatalog() {
           </span>
           <div className="fakeSpace"></div>
           <div style={{ display: displayWeight }} className="drop-downElement">
-            Andrusha
+            <button className="drop-downElementAccept">Accept</button>
           </div>
         </li>
 
@@ -148,7 +155,7 @@ export function FilterCatalog() {
             style={{ display: displayNewDeals }}
             className="drop-downElementYellow"
           >
-            Andrusha
+            <button className="drop-downElementAccept">Accept</button>
           </div>
         </li>
       </ul>
