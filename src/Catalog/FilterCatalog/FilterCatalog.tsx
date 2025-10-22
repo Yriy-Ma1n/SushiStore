@@ -6,6 +6,7 @@ export function FilterCatalog() {
   const [displayCategory, setDisplayCategory] = useState("none");
   const [displayFilling, setDisplayFilling] = useState("none");
   const [displayWeight, setDisplayWeight] = useState("none");
+  const [displayNewDeals, setDisplayNewDeals] = useState("none");
 
   return (
     <div className="filter">
@@ -121,7 +122,10 @@ export function FilterCatalog() {
           </div>
         </li>
 
-        <li>
+        <li
+          onMouseOver={() => setDisplayNewDeals("flex")}
+          onMouseOut={() => setDisplayNewDeals("none")}
+        >
           <span className="OrangeFilterElement">
             <p>New & Deals</p>
             <svg
@@ -139,6 +143,13 @@ export function FilterCatalog() {
               <polygon points="47.25,15 45.164,12.914 25,33.078 4.836,12.914 2.75,15 25,37.25 " />
             </svg>
           </span>
+          <div className="fakeSpace"></div>
+          <div
+            style={{ display: displayNewDeals }}
+            className="drop-downElementYellow"
+          >
+            Andrusha
+          </div>
         </li>
       </ul>
     </div>
