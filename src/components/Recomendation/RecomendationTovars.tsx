@@ -4,13 +4,15 @@ import ProductTile from "../ProductTile/ProductTile"
 import type { Product } from "../../Types/Product"
 import PaginationMainPage from "./PaginationCount/Pagination"
 import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { setItems } from "../../features/product/productSlice"
 let backupArr: Product[] = []
 let currCategoryBackUp: Product[] = []
 
 export default function Recomendations() {
     const [name, setName] = useState('All')
     const [products, setProducts] = useState<Product[]>([])
-
+    const dispatch = useDispatch()
 
 
     const changeTypeOfSection = (event: React.MouseEvent) => {
@@ -52,7 +54,7 @@ export default function Recomendations() {
                 setProducts(firstItem)
                 backupArr = data
                 currCategoryBackUp = firstItem
-                
+                dispatch(setItems(data))
             })
 
     }, [])

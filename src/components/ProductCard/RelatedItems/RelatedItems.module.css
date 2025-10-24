@@ -1,0 +1,14 @@
+.related{
+    color:var(--whiteTextColor);
+    margin-left: 50px;
+    font-family: var(--font);
+}
+.tile{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+}
+.tile div{
+    width: 300px;
+    height: 300px;
+}
