@@ -58,6 +58,12 @@
     padding: 10px 15px;
     cursor: pointer;
 }
+.drop-downElementInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
 .inputBlock {
     display: flex;
     align-items: center;
@@ -78,4 +84,16 @@
     height: 23px;
     width: calc(50% - 5px);
     padding: 10px 15px;
+}
+.CheckBox {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 5px;
+}
+.CheckBox div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

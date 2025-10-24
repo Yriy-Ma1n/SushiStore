@@ -36,9 +36,33 @@ export function FilterCatalog() {
           </span>
           <div className="fakeSpace"></div>
           <div style={{ display: displayPrice }} className="drop-downElement">
-            <div className="inputBlock">
-              <input placeholder="min" type="text" />
-              <input placeholder="max" type="text" />
+            <div className="drop-downElementInfo">
+              <div className="inputBlock">
+                <input placeholder="min" type="text" />
+                <input placeholder="max" type="text" />
+              </div>
+
+              <div className="CheckBox">
+                <div>
+                  <input type="checkbox" id="test1" />
+                  <label htmlFor="test1">Test1</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="test2" />
+                  <label htmlFor="test2">Test2</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="test3" />
+                  <label htmlFor="test3">Test3</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="test4" />
+                  <label htmlFor="test4">Test4</label>
+                </div>
+              </div>
             </div>
 
             <button className="drop-downElementAccept">Accept</button>
