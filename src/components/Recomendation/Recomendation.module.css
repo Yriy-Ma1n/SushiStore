@@ -8,7 +8,7 @@
     margin-top: 10px;
 }
 
-.buttonSection button {
+.buttonSection button{
     color: var(--lGreyTextColor);
     padding: 12px 25px;
     border-radius: 25px;
@@ -44,7 +44,6 @@
     display: flex;
     gap: 10px
 }
-.loading{
-    font-size: 50px;
-    color:white
+.notwork{
+    opacity: 0.5;
 }

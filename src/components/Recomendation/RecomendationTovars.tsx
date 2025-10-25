@@ -29,17 +29,20 @@ export default function Recomendations() {
             setProducts(currCategoryBackUp)
 
         } else if (text === 'New Arrivals') {
-            const now = new Date();
+            // const now = new Date();
 
-            const newdata = currCategoryBackUp.filter(item => {
-                const DataBasedate = new Date(item.created_at);
-                const differentMs = now.getTime() - DataBasedate.getTime()
-                const diffDays = differentMs / (1000 * 60 * 60 * 24);
-                return diffDays < 7 ? item : false
+            // const newdata = currCategoryBackUp.filter(item => {
+            //     const DataBasedate = new Date(item.created_at);
+            //     const differentMs = now.getTime() - DataBasedate.getTime()
+            //     const diffDays = differentMs / (1000 * 60 * 60 * 24);
+            //     return diffDays < 7 ? item : false
 
-            })
+            // })
 
-            setProducts(newdata)
+            // setProducts(newdata)
+            return
+        }else{
+            return
         }
 
         setName(text)
@@ -73,8 +76,8 @@ export default function Recomendations() {
             <div className={styles.buttonSection} onClick={(event: React.MouseEvent) => changeTypeOfSection(event)}>
                 <button className={name === 'All' ? styles.selected : ''}>All</button>
                 <button className={name === 'Popular' ? styles.selected : ''}>Popular</button>
-                <button className={name === 'New Arrivals' ? styles.selected : ''}>New Arrivals</button>
-                <button className={name === 'Specials' ? styles.selected : ''}>Specials</button>
+                <button className={name === 'New Arrivals' ? styles.selected : styles.notwork}>New Arrivals</button>
+                <button className={name === 'Specials' ? styles.selected : styles.notwork}>Specials</button>
             </div>
             <div className={styles.gridTiles}>
                 {products.map(item => {
@@ -91,7 +94,6 @@ export default function Recomendations() {
                 backupArr.length < 8
                     ? null
                     : <PaginationMainPage backupArr={backupArr} setPage={setPage} />
-
             }
 
         </div>

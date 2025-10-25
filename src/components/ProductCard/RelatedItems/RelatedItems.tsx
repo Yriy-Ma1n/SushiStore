@@ -1,9 +1,8 @@
-import { useSelector } from "react-redux";
-import type { RootState } from "../../../store";
 import ProductTile from "../../ProductTile/ProductTile";
 import style from "./RelatedItems.module.css";
 import { useEffect, useState } from "react";
 import type { Product } from "../../../Types/Product";
+import Loading from "../../Loading/Loading";
 
 export function RelatedItems(props: { name: string }) {
   const [data, setData] = useState<Product[] | null>(null);
@@ -11,11 +10,9 @@ export function RelatedItems(props: { name: string }) {
   useEffect(() => {
     fetch(`http://localhost:3000/products/related/${props.name}`)
       .then((res) => res.json())
-      .then((data) => {
-        console.log(props.name);
-        setData(data);
-      });
+      .then((data) => setData(data));
   }, [props.name ? props.name : null]);
+  
 
   return (
     <div className={style.container}>
@@ -30,7 +27,7 @@ export function RelatedItems(props: { name: string }) {
                 shortDesc={item.description.slice(0, 40)}
               />
             ))
-          : false}
+          : <Loading/>}
       </div>
     </div>
   );

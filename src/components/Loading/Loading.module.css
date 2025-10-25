@@ -4,7 +4,8 @@
     justify-content: center;
     align-items: center;
     color: white;
-    
+    font-size: 50px;
+    color: var(--whiteTextColor)
 }
 
 .loading span {
