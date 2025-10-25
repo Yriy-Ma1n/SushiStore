@@ -1,21 +1,3 @@
-.loading {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-.loading span {
-    animation-name: rotate-center;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation: rotate-center 1s ease-out 0s infinite normal none;
-}
 
 .upperContent {
     display: flex;
@@ -74,13 +56,3 @@
     cursor: pointer;
 }
 
-@keyframes rotate-center {
-
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}

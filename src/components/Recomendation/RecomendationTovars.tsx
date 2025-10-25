@@ -6,6 +6,7 @@ import PaginationMainPage from "./PaginationCount/Pagination"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { setItems } from "../../features/product/productSlice"
+import Loading from "../Loading/Loading"
 let backupArr: Product[] = []
 let currCategoryBackUp: Product[] = []
 
@@ -66,7 +67,7 @@ export default function Recomendations() {
         currCategoryBackUp = arr
     }
     if (products.length === 0) {
-        return <div className={styles.loading}>loading...</div>
+        return <Loading />
     } else {
         return <div className={styles.mainButtonSection}>
             <div className={styles.buttonSection} onClick={(event: React.MouseEvent) => changeTypeOfSection(event)}>

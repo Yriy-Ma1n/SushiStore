@@ -4,6 +4,7 @@ import type { Product } from "../../Types/Product";
 import styles from "./Productcart.module.css";
 import ProductAttribute from "./productAttribute/productAttribute";
 import { RelatedItems } from "./RelatedItems/RelatedItems";
+import Loading from "../Loading/Loading";
 
 export default function ProductCart() {
   const { id } = useParams();
@@ -22,11 +23,9 @@ export default function ProductCart() {
   if (product && Object.keys(product).length === 0) {
     return <div>Tovar not found</div>;
   } else if (!product) {
-    return <div className={styles.loading}>
-      <span className="material-symbols-outlined">
-        progress_activity
-      </span>
-    </div>
+
+    return <Loading />
+    
   } else {
     return (
       <div className={styles.container}>
@@ -52,7 +51,7 @@ export default function ProductCart() {
           </div>
         </div>
         <div className={styles.lowerContent}>
-          
+
           <RelatedItems name={product?.name ? product.name : "asd"} />
         </div>
       </div>
