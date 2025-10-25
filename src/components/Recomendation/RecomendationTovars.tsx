@@ -65,33 +65,37 @@ export default function Recomendations() {
         setProducts(arr)
         currCategoryBackUp = arr
     }
+    if (products.length === 0) {
+        return <div className={styles.loading}>loading...</div>
+    } else {
+        return <div className={styles.mainButtonSection}>
+            <div className={styles.buttonSection} onClick={(event: React.MouseEvent) => changeTypeOfSection(event)}>
+                <button className={name === 'All' ? styles.selected : ''}>All</button>
+                <button className={name === 'Popular' ? styles.selected : ''}>Popular</button>
+                <button className={name === 'New Arrivals' ? styles.selected : ''}>New Arrivals</button>
+                <button className={name === 'Specials' ? styles.selected : ''}>Specials</button>
+            </div>
+            <div className={styles.gridTiles}>
+                {products.map(item => {
+                    return <Link to={`/product/${item.id}`} key={item.id}>
+                        <ProductTile
+                            img={item.img}
+                            name={item.name}
+                            shortDesc={item.description.slice(0, 30)}
+                        />
+                    </Link>
+                })}
+            </div>
+            {
+                backupArr.length < 8
+                    ? null
+                    : <PaginationMainPage backupArr={backupArr} setPage={setPage} />
 
+            }
 
-
-    return <div className={styles.mainButtonSection}>
-        <div className={styles.buttonSection} onClick={(event: React.MouseEvent) => changeTypeOfSection(event)}>
-            <button className={name === 'All' ? styles.selected : ''}>All</button>
-            <button className={name === 'Popular' ? styles.selected : ''}>Popular</button>
-            <button className={name === 'New Arrivals' ? styles.selected : ''}>New Arrivals</button>
-            <button className={name === 'Specials' ? styles.selected : ''}>Specials</button>
         </div>
-        <div className={styles.gridTiles}>
-            {products.map(item => {
-                return <Link to={`/product/${item.id}`} key={item.id}>
-                    <ProductTile
-                        img={item.img}
-                        name={item.name}
-                        shortDesc={item.description.slice(0, 30)}
-                    />
-                </Link>
-            })}
-        </div>
-        {
-            backupArr.length < 8
-                ? null
-                : <PaginationMainPage backupArr={backupArr} setPage={setPage} />
+    }
 
-        }
 
-    </div>
+
 }

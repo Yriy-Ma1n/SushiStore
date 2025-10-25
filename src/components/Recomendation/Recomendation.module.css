@@ -44,4 +44,7 @@
     display: flex;
     gap: 10px
 }
-
+.loading{
+    font-size: 50px;
+    color:white
+}
