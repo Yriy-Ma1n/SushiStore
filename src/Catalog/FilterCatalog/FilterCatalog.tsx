@@ -10,6 +10,11 @@ export function FilterCatalog() {
   const [displayWeight, setDisplayWeight] = useState("none");
   const [displayNewDeals, setDisplayNewDeals] = useState("none");
 
+  // для кастомного чекбокса
+  const [range1, setRange1] = useState("checkBoxItemFalse");
+  const [range2, setRange2] = useState("checkBoxItemFalse");
+  const [range3, setRange3] = useState("checkBoxItemFalse");
+
   return (
     <div className="filter">
       <ul className="listFilter">
@@ -43,24 +48,49 @@ export function FilterCatalog() {
               </div>
 
               <div className="CheckBox">
-                <div>
-                  <input type="checkbox" id="test1" />
-                  <label htmlFor="test1">Test1</label>
+                <div
+                  onClick={() => {
+                    if (range1 === "checkBoxItemFalse") {
+                      setRange1("checkBoxItemTrue");
+                    } else {
+                      setRange1("checkBoxItemFalse");
+                    }
+                  }}
+                >
+                  <div className={range1} id="range1">
+                    <span className="material-symbols-outlined">check</span>
+                  </div>
+                  <label htmlFor="range1">300-900</label>
                 </div>
 
-                <div>
-                  <input type="checkbox" id="test2" />
-                  <label htmlFor="test2">Test2</label>
+                <div
+                  onClick={() => {
+                    if (range2 === "checkBoxItemFalse") {
+                      setRange2("checkBoxItemTrue");
+                    } else {
+                      setRange2("checkBoxItemFalse");
+                    }
+                  }}
+                >
+                  <div className={range2} id="range2">
+                    <span className="material-symbols-outlined">check</span>
+                  </div>
+                  <label htmlFor="range2">900-1500</label>
                 </div>
 
-                <div>
-                  <input type="checkbox" id="test3" />
-                  <label htmlFor="test3">Test3</label>
-                </div>
-
-                <div>
-                  <input type="checkbox" id="test4" />
-                  <label htmlFor="test4">Test4</label>
+                <div
+                  onClick={() => {
+                    if (range3 === "checkBoxItemFalse") {
+                      setRange3("checkBoxItemTrue");
+                    } else {
+                      setRange3("checkBoxItemFalse");
+                    }
+                  }}
+                >
+                  <div className={range3} id="range3">
+                    <span className="material-symbols-outlined">check</span>
+                  </div>
+                  <label htmlFor="range3">1500-2000</label>
                 </div>
               </div>
             </div>

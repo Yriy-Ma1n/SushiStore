@@ -97,3 +97,30 @@
     align-items: center;
     gap: 10px;
 }
+.checkBoxItemFalse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: var(--whiteTextColor);
+}
+.checkBoxItemTrue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: var(--dYellowColor);
+}
+.CheckBox div label {
+    cursor: pointer;
+}
+.checkBoxItemFalse span {
+    color: var(--whiteTextColor);
+}
+.checkBoxItemTrue span {
+    color: var(--yellowColor);
+}
