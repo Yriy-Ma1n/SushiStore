@@ -3,6 +3,7 @@
     flex-direction: row;
     color:white;
     justify-content: space-around;
+    height: 80vh;
 }
 .titleInfo{
     display: flex;
@@ -19,7 +20,7 @@
     background-color: var(--bgcGreyColor);
     padding: 20px 40px;
     border-radius: 20px;
-    
+    height: 250px;
 }
 .OrderTitle{
     margin-top: 5px;
@@ -56,4 +57,10 @@
 .Hr{
     background-color: var(--dGreyTextColor);
     height: 2px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    overflow: auto;
 }

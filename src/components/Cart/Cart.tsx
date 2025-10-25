@@ -9,6 +9,10 @@ export default function Cart() {
             </div>
             <div className={styles.info}>
                 <CartTile name="Salmon Nigiri" cost="10.00" src={img} amount={1} allamount={50}/>
+                <CartTile name="Salmon Nigiri" cost="10.00" src={img} amount={1} allamount={50}/>
+                <CartTile name="Salmon Nigiri" cost="10.00" src={img} amount={1} allamount={50}/>
+                <CartTile name="Salmon Nigiri" cost="10.00" src={img} amount={1} allamount={50}/>
+                <CartTile name="Salmon Nigiri" cost="10.00" src={img} amount={1} allamount={50}/>
             </div>
         </div>
         <div className={styles.infoAboutOrder}>
