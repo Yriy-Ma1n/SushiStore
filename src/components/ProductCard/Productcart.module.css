@@ -1,7 +1,26 @@
+.loading {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.loading span {
+    animation-name: rotate-center;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation: rotate-center 1s ease-out 0s infinite normal none;
+}
+
 .upperContent {
     display: flex;
     justify-content: center;
-    gap:60px;
+    gap: 60px;
     padding: 0px 20px;
 }
 
@@ -30,7 +49,7 @@
 .containerDesc {
     display: flex;
     justify-content: space-between;
-    border-top:0.2px solid var(--lGreyTextColor);
+    border-top: 0.2px solid var(--lGreyTextColor);
     border-bottom: 0.2px solid var(--lGreyTextColor);
     padding: 0px 30px;
     font-family: var(--font);
@@ -53,4 +72,15 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+@keyframes rotate-center {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

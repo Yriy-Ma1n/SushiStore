@@ -21,6 +21,12 @@ export default function ProductCart() {
 
   if (product && Object.keys(product).length === 0) {
     return <div>Tovar not found</div>;
+  } else if (!product) {
+    return <div className={styles.loading}>
+      <span className="material-symbols-outlined">
+        progress_activity
+      </span>
+    </div>
   } else {
     return (
       <div className={styles.container}>
@@ -46,6 +52,7 @@ export default function ProductCart() {
           </div>
         </div>
         <div className={styles.lowerContent}>
+          
           <RelatedItems name={product?.name ? product.name : "asd"} />
         </div>
       </div>
