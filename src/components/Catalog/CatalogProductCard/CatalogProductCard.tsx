@@ -1,4 +1,4 @@
-import type { Product } from "../../Types/Product";
+import type { Product } from "../../../Types/Product"
 import "./CatalogProductCard.css";
 
 export function CatalogProductCard(props:Product){
