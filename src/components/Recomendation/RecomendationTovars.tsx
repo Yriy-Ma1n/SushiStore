@@ -41,7 +41,7 @@ export default function Recomendations() {
 
             // setProducts(newdata)
             return
-        }else{
+        } else {
             return
         }
 
@@ -50,7 +50,7 @@ export default function Recomendations() {
 
     }
 
-    useEffect(() => {
+    const requestToServer = () => {
         fetch(`http://localhost:3000/products`)
             .then(res => res.json())
             .then(data => {
@@ -60,6 +60,15 @@ export default function Recomendations() {
                 currCategoryBackUp = firstItem
                 dispatch(setItems(data))
             })
+            .catch(() => {
+                setTimeout(() => {
+                    requestToServer()
+                }, 5000)
+            })
+    }
+
+    useEffect(() => {
+       requestToServer()
 
     }, [])
 
