@@ -1,0 +1,43 @@
+.TileContainer{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bgcGreyColor);
+    padding: 20px;
+    border-radius: 10px;
+}
+.leftSide{
+    display: flex;
+    gap:20px;
+}
+.leftSide img{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+.info{
+    font-family: var(--font);
+}
+.info h2{
+    margin: 0px;
+}
+.info p{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    
+}
+.info h3{
+    margin: 0;
+}
+.rightSide{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    align-items: center;
+}
+.rightSide span{
+    transition: 0.5s;
+}
+.rightSideSpan:hover{
+    cursor: pointer;
+    color:var(--redColor);
+}

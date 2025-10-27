@@ -3,9 +3,10 @@ import { Provider } from 'react-redux'
 import { store } from './store'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HomePage from './components/Home/Home-page'
-import { Catalog } from './Catalog/Catalog'
+import { Catalog } from './components/Catalog/Catalog'
 import Layout from './components/Layout/Layout'
 import ProductCart from './components/ProductCard/Productcard'
+import Cart from './components/Cart/Cart'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path:'/product/:id',
         element:<ProductCart/>
+      },
+      {
+        path:'/cart',
+        element:<Cart/>
       }
     ]
   }

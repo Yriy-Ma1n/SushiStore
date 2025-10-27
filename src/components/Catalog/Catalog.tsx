@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Catalog.css";
-import { CatalogProductCard } from "./CatalogProductCard/CatalogProductCard";
+import CatalogProductCard from "./CatalogProductCard/CatalogProductCard";
 import { FilterCatalog } from "./FilterCatalog/FilterCatalog";
-import type { Product } from "../Types/Product";
-import { Link } from "react-router-dom";
+import type { Product } from "../../Types/Product";
 
 
 export function Catalog(){
@@ -21,6 +20,7 @@ export function Catalog(){
             const data = await res.json();
             setProducts(data);
             setRenderProducts(data.slice(0, limit));
+            console.log(data);
         }
         catch(err){
             console.error(`Fetch reqest has problems:`, err);
@@ -49,7 +49,7 @@ export function Catalog(){
             <FilterCatalog/>
         </div>
         <div className="productZone">
-            {renderProducts.map(item => <Link to={`/product/${item.id}`}><div className="item" key={item.id}> <CatalogProductCard {...item}/> </div></Link>)}
+            {renderProducts.map(item => <div className="item" key={item.id}> <CatalogProductCard {...item}/> </div>)}
         </div>
 
         <div className="catalogPagination">
