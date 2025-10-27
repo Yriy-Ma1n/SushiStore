@@ -31,4 +31,13 @@
 .rightSide{
     display: flex;
     justify-content: center;
+    gap:20px;
+    align-items: center;
+}
+.rightSide span{
+    transition: 0.5s;
+}
+.rightSide span:hover{
+    cursor: pointer;
+    color:var(--redColor)
 }
