@@ -29,15 +29,15 @@
 .OrangeFilterElement {
     background-color: var(--dYellowColor);
 }
-.filterElement p,
-.OrangeFilterElement p {
+.filterElement,
+.OrangeFilterElement {
     font-size: var(--titleSize);
     font-weight: var(--titleWeight);
 }
-.filterElement p {
+.filterElement {
     color: var(--lGreyTextColor);
 }
-.OrangeFilterElement p {
+.OrangeFilterElement  {
     color: var(--yellowColor);
 }
 .filterElement svg {
