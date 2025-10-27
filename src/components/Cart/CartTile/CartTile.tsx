@@ -36,9 +36,11 @@ export default function CartTile(props: { src: string, name: string, cost: strin
             </div>
             <div className={styles.rightSide}>
                 <Count count={count} plusBtn={plusButton} minusBtn={minusButton} />
-                <span className="material-symbols-outlined" onClick={deleteButton}>
-                    delete
-                </span>
+                <div className={styles.rightSideSpan}>
+                    <span className="material-symbols-outlined" onClick={deleteButton}>
+                        delete
+                    </span>
+                </div>
             </div>
         </div>
     }
