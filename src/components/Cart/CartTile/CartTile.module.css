@@ -31,17 +31,13 @@
 .rightSide{
     display: flex;
     justify-content: center;
-}
-.buttonsCount{
-    display: flex;
-    gap:30px;
+    gap:20px;
     align-items: center;
 }
-.addButton, .minusButton{
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    border: 0px;
+.rightSide span{
+    transition: 0.5s;
+}
+.rightSideSpan:hover{
+    cursor: pointer;
+    color:var(--redColor);
 }
