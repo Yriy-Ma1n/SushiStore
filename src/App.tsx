@@ -7,6 +7,8 @@ import { Catalog } from './components/Catalog/Catalog'
 import Layout from './components/Layout/Layout'
 import ProductCart from './components/ProductCard/Productcard'
 import Cart from './components/Cart/Cart'
+import { SignIn } from './components/SignInLogIn/SignIn'
+import { LogIn } from './components/SignInLogIn/LogIn'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path:'/cart',
         element:<Cart/>
+      },
+      {
+        path:'/SignIn',
+        element:<SignIn/>
+      },
+      {
+        path:'/LogIn',
+        element:<LogIn/>
       }
     ]
   }
