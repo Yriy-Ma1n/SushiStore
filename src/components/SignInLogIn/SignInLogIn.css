@@ -1,0 +1,164 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: var(--font);
+}
+
+.login-box {
+  background-color: #222;
+  width: 400px;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--h1Size);
+  font-weight: var(--h1Weight);
+  margin-bottom: 0.5rem;
+  color: var(--yellowColor);
+}
+
+.subtitle {
+  font-size: var(--subtitleSize);
+  color: var(--dGreyTextColor);
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+}
+
+.social-btn {
+  background-color: #333;
+  color: var(--whiteTextColor);
+  border: 1px solid #444;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: var(--titleWeight);
+  transition: 0.3s;
+}
+
+.social-btn:hover {
+  background-color: var(--dYellowColor);
+  color: var(--whiteTextColor);
+}
+
+.divider {
+  position: relative;
+  margin: 1.5rem 0;
+  color: var(--dGreyTextColor);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #444;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group input {
+  width: calc(100% - 1.5rem);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: var(--whiteTextColor);
+  outline: none;
+  font-family: var(--font);
+}
+
+.input-group input::placeholder {
+  color: var(--dGreyTextColor);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--subtitleSize);
+  color: var(--dGreyTextColor);
+  margin-bottom: 1rem;
+}
+
+.options label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.options a {
+  color: var(--yellowColor);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.signin-btn {
+  width: 100%;
+  background-color: var(--yellowColor);
+  color: #000;
+  font-weight: var(--titleWeight);
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signin-btn:hover {
+  background-color: var(--dYellowColor);
+  color: var(--whiteTextColor);
+}
+
+.signup-text {
+  margin-top: 1rem;
+  font-size: var(--subtitleSize);
+  color: var(--dGreyTextColor);
+}
+
+.signup-text a {
+  color: var(--yellowColor);
+  text-decoration: none;
+}
+
+.checkBoxItemFalse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: var(--whiteTextColor);
+}
+.checkBoxItemTrue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: var(--dYellowColor);
+}
