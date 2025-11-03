@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux"
 import styles from "./Personal.module.css"
 import type { RootState } from "../../../store"
+import { Link } from "react-router-dom"
 
 export default function PersonalAccount() {
     const data = useSelector((state: RootState) => state.user)
     if (!data) {
-        return <div className={styles.nfProfile}>
+        return <Link to={"SignIn"}> <div className={styles.nfProfile}>
             <span className="material-symbols-outlined">account_circle</span>
-        </div>
+        </div> </Link>
     } else {
         return <div>Try</div>
     }
