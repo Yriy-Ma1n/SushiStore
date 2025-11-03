@@ -36,7 +36,7 @@ export function SignIn(){
                 setRange1("checkBoxItemTrue");
             }
             }}>
-            <div className={range1}><span className="material-symbols-outlined">check</span></div> 
+            <div className={range1}><span className="material-symbols-outlined">check</span></div>
             Remember me
             </label>
           <a href="#" className="forgot">Forgot Password?</a>
@@ -46,7 +46,7 @@ export function SignIn(){
       </form>
 
       <p className="signup-text">
-        You haven’t any account? <a href="#">Log In</a>
+        You haven’t any account? <a href="/LogIn">Log In</a>
       </p>
     </div>
   </div>
