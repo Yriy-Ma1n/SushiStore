@@ -15,7 +15,7 @@ type UserObj = {
     repeatPassword:Inputs
 }
 
-const {register, handleSubmit, watch, formState} = useForm<UserObj>({
+const {register, handleSubmit, watch, formState, reset} = useForm<UserObj>({
     mode: "onChange",
 });
 
@@ -28,6 +28,7 @@ const repeatPasswordError = formState.errors.repeatPassword?.message;
 
 const onSubmit:SubmitHandler<UserObj> = (data) => {
     console.log(data);
+    reset();
 }
 
     return(<>
@@ -51,6 +52,10 @@ const onSubmit:SubmitHandler<UserObj> = (data) => {
                 pattern: {
                     value: /^[A-Za-z0-9 !@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?`~]+$/,
                     message: "Invalid full name"
+                },
+                minLength: {
+                    value: 6,
+                    message:"Minimum number of characters: 6"
                 }
             })} />
             {fullNameError && (<p className="errorMassage">{fullNameError}</p>)}
@@ -72,6 +77,10 @@ const onSubmit:SubmitHandler<UserObj> = (data) => {
         <input type="password" placeholder="Password" {...register
             ('password', {
                 required: "This file is required",
+                pattern: {
+                    value: /^[A-Za-z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?`~]+$/,
+                    message:"Invalid Password"
+                }
             })} />
             {passwordError && (<p className="errorMassage">{passwordError}</p>)}
       </div>
@@ -80,7 +89,11 @@ const onSubmit:SubmitHandler<UserObj> = (data) => {
         <input type="password" placeholder="Confirm Password" {...register
             ('repeatPassword', {
                 required: "This file is required",
-                validate: (value) => value === password || "The passwords don't match"
+                validate: (value) => value === password || "The passwords don't match",
+                pattern: {
+                    value: /^[A-Za-z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?`~]+$/,
+                    message:"Invalid Confirm Password"
+                }
             })}/>
         {repeatPasswordError && (<p className="errorMassage">{repeatPasswordError}</p>)}
       </div>
