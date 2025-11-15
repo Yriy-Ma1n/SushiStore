@@ -1,9 +1,38 @@
 import { useState } from "react";
 import "./SignInLogIn.css";
+import { useForm, type SubmitHandler } from "react-hook-form";
 
 
 export function LogIn(){
 const [range1, setRange1] = useState("checkBoxItemFalse");
+
+//описываем типы
+type Inputs = string | undefined;
+type UserObj = {
+    fullName:Inputs,
+    email:Inputs,
+    password:Inputs,
+    repeatPassword:Inputs
+}
+
+//подключаем useForm и все нужние нам настройки
+const {register, handleSubmit, watch, formState, reset} = useForm<UserObj>({
+    mode: "onChange",
+});
+
+//прослушиваем поле пароля
+const password = watch("password");
+
+//получаем ошибки
+const fullNameError = formState.errors.fullName?.message;
+const emailError = formState.errors.email?.message;
+const passwordError = formState.errors.password?.message;
+const repeatPasswordError = formState.errors.repeatPassword?.message;
+
+const onSubmit:SubmitHandler<UserObj> = (data) => {
+    console.log(data);
+    reset();
+}
 
     return(<>
         <div className="container">
@@ -12,27 +41,64 @@ const [range1, setRange1] = useState("checkBoxItemFalse");
     <p className="subtitle">Create an account to get started!</p>
 
     <div className="buttons">
-      <button className="social-btn">Sign up with Google</button>
-      <button className="social-btn">Sign up with Apple</button>
+      <button className="social-btn">Log in with Google</button>
+      <button className="social-btn">Log in with Apple</button>
     </div>
 
     <div className="divider">OR</div>
 
-    <form>
+     <form onSubmit={handleSubmit(onSubmit)} >
       <div className="input-group">
-        <input type="text" placeholder="Full Name" required />
+        <input id="input1" type="text" placeholder="Full Name" {...register
+            ('fullName', {
+                required: "This file is required",
+                pattern: {
+                    value: /^[A-Za-z0-9 !@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?`~]+$/,
+                    message: "Invalid full name"
+                },
+                minLength: {
+                    value: 6,
+                    message:"Minimum number of characters: 6"
+                }
+            })} />
+            {fullNameError && (<p className="errorMassage">{fullNameError}</p>)}
       </div>
 
       <div className="input-group">
-        <input type="email" placeholder="Email" required />
+        <input type="email" placeholder="Email" {...register
+            ('email', {
+                required: "This file is required",
+                pattern: {
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/,
+                    message: "Invalid email address"
+                },
+            })} />
+            {emailError && (<p className="errorMassage">{emailError}</p>)}
       </div>
 
       <div className="input-group">
-        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Password" {...register
+            ('password', {
+                required: "This file is required",
+                pattern: {
+                    value: /^[A-Za-z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?`~]+$/,
+                    message:"Invalid Password"
+                }
+            })} />
+            {passwordError && (<p className="errorMassage">{passwordError}</p>)}
       </div>
 
       <div className="input-group">
-        <input type="password" placeholder="Confirm Password" required />
+        <input type="password" placeholder="Confirm Password" {...register
+            ('repeatPassword', {
+                required: "This file is required",
+                validate: (value) => value === password || "The passwords don't match",
+                pattern: {
+                    value: /^[A-Za-z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?`~]+$/,
+                    message:"Invalid Confirm Password"
+                }
+            })}/>
+        {repeatPasswordError && (<p className="errorMassage">{repeatPasswordError}</p>)}
       </div>
 
       <div className="options">
@@ -48,7 +114,8 @@ const [range1, setRange1] = useState("checkBoxItemFalse");
         </label>
       </div>
 
-      <button type="submit" className="signin-btn">Sign Up</button>
+      <button disabled={range1==="checkBoxItemFalse"?true:false}
+      type="submit" className="signin-btn">Log in</button>
     </form>
 
     <p className="signup-text">
