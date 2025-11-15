@@ -15,12 +15,15 @@ type UserObj = {
     repeatPassword:Inputs
 }
 
+//подключаем useForm и все нужние нам настройки
 const {register, handleSubmit, watch, formState, reset} = useForm<UserObj>({
     mode: "onChange",
 });
 
+//прослушиваем поле пароля
 const password = watch("password");
 
+//получаем ошибки
 const fullNameError = formState.errors.fullName?.message;
 const emailError = formState.errors.email?.message;
 const passwordError = formState.errors.password?.message;
@@ -38,8 +41,8 @@ const onSubmit:SubmitHandler<UserObj> = (data) => {
     <p className="subtitle">Create an account to get started!</p>
 
     <div className="buttons">
-      <button className="social-btn">Sign up with Google</button>
-      <button className="social-btn">Sign up with Apple</button>
+      <button className="social-btn">Log in with Google</button>
+      <button className="social-btn">Log in with Apple</button>
     </div>
 
     <div className="divider">OR</div>
