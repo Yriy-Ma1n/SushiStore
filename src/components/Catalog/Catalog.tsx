@@ -4,6 +4,7 @@ import CatalogProductCard from "./CatalogProductCard/CatalogProductCard";
 import { FilterCatalog } from "./FilterCatalog/FilterCatalog";
 import type { Product } from "../../Types/Product";
 import { Link } from "react-router-dom";
+import Loading from "../Loading/Loading";
 
 export function Catalog() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -38,6 +39,10 @@ export function Catalog() {
   useEffect(() => {
     changePage();
   }, [page, products]);
+
+  if(products.length === 0){
+    return <Loading />
+  }else {
 
   return (
     <div className="CatalogSection">
@@ -83,4 +88,5 @@ export function Catalog() {
       </div>
     </div>
   );
+}
 }
