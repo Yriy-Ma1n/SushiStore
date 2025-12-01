@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { memo, useRef, useState } from "react";
 import "./FilterCatalog.css";
 import "./DropElement.css";
+import type { Product } from "../../../Types/Product";
 
-export function FilterCatalog() {
+export const FilterCatalog = memo((products:Product[] | []) => {
   //для отоброжения выпадающего окна
   const [displayPrice, setDisplayPrice] = useState("none");
   const [displayCategory, setDisplayCategory] = useState("none");
@@ -22,6 +23,28 @@ export function FilterCatalog() {
     }
   }
 
+  const originalProducts = Object.values(products);
+  let productsAfterFilter = originalProducts;
+
+  let inputMin = useRef<HTMLInputElement>(null);
+  let inputMax = useRef<HTMLInputElement>(null);
+  const inputCheck = () => {
+    let min = Number(inputMin.current!.value);
+    let max = Number(inputMax.current!.value);
+    
+    if(!min && !max){
+      console.log("inputs empty");
+      return
+    }else{
+      productsAfterFilter = productsAfterFilter.filter((el) => el.price >= min && el.price <= max);
+    }
+  }
+
+  const acceptPrice = () => {
+    inputCheck();
+  }
+
+
   return (
     <div className="filter">
       <ul className="listFilter">
@@ -37,8 +60,8 @@ export function FilterCatalog() {
           <div style={{ display: displayPrice }} className="drop-downElement">
             <div className="drop-downElementInfo">
               <div className="inputBlock">
-                <input placeholder="min" type="text" />
-                <input placeholder="max" type="text" />
+                <input ref={inputMin} placeholder="min" type="text" />
+                <input ref={inputMax} placeholder="max" type="text" />
               </div>
 
               <div className="CheckBox">
@@ -65,7 +88,7 @@ export function FilterCatalog() {
               </div>
             </div>
 
-            <button className="drop-downElementAccept">Accept</button>
+            <button onClick={() => acceptPrice()} className="drop-downElementAccept">Accept</button>
           </div>
         </li>
 
@@ -128,3 +151,4 @@ export function FilterCatalog() {
     </div>
   );
 }
+)

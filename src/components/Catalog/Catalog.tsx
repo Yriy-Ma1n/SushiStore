@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import "./Catalog.css";
 import CatalogProductCard from "./CatalogProductCard/CatalogProductCard";
 import { FilterCatalog } from "./FilterCatalog/FilterCatalog";
@@ -6,7 +6,7 @@ import type { Product } from "../../Types/Product";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
-export function Catalog() {
+export const Catalog = memo(() => {
   const [products, setProducts] = useState<Product[]>([]);
   let [renderProducts, setRenderProducts] = useState<Product[]>([]);
   const [page, setPage] = useState(1);
@@ -21,8 +21,8 @@ export function Catalog() {
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
       setProducts(data);
-      setRenderProducts(data.slice(0, limit));
-      console.log(data);
+      setRenderProducts(products.slice(0, limit));
+      //console.log(data);
     } catch (err) {
       console.error(`Fetch reqest has problems:`, err);
     }
@@ -48,7 +48,7 @@ export function Catalog() {
     <div className="CatalogSection">
       <div className="filterZone">
         <h1>Sushi</h1>
-        <FilterCatalog />
+        <FilterCatalog {...products} />
       </div>
       <div className="productZone">
         {renderProducts.map((item) => (
@@ -89,4 +89,4 @@ export function Catalog() {
     </div>
   );
 }
-}
+})
