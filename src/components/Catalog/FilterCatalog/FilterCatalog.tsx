@@ -13,8 +13,20 @@ export const FilterCatalog = memo((products:Product[] | []) => {
 
   // для кастомного чекбокса
   const [range1, setRange1] = useState("checkBoxItemTrue");
+  const objRange1 = {
+    min: 300,
+    max: 900,
+  }
   const [range2, setRange2] = useState("checkBoxItemTrue");
+    const objRange2 = {
+    min: 900,
+    max: 1500,
+  }
   const [range3, setRange3] = useState("checkBoxItemTrue");
+    const objRange3 = {
+    min: 1500,
+    max: 2000,
+  }
   function setCheckBox(range: string, setRange: Function) {
     if (range === "checkBoxItemFalse") {
       setRange("checkBoxItemTrue");
@@ -23,25 +35,38 @@ export const FilterCatalog = memo((products:Product[] | []) => {
     }
   }
 
+  //фильтр цены
   const originalProducts = Object.values(products);
   let productsAfterFilter = originalProducts;
 
   let inputMin = useRef<HTMLInputElement>(null);
   let inputMax = useRef<HTMLInputElement>(null);
-  const inputCheck = () => {
+  const inputCheckPrice = () => {
     let min = Number(inputMin.current!.value);
     let max = Number(inputMax.current!.value);
     
-    if(!min && !max){
+    if(!min || !max){
       console.log("inputs empty");
       return
     }else{
       productsAfterFilter = productsAfterFilter.filter((el) => el.price >= min && el.price <= max);
+      priceComparison(objRange1, setRange1);
+      priceComparison(objRange2, setRange2);
+      priceComparison(objRange3, setRange3);
+    }
+  }
+
+  const priceComparison = (objRange:{min:number, max:number}, setRange:Function) => {
+    let min = Number(inputMin.current!.value);
+    let max = Number(inputMax.current!.value);
+
+    if(objRange.min >= max || min >= objRange.max){
+      setRange("checkBoxItemFalse");
     }
   }
 
   const acceptPrice = () => {
-    inputCheck();
+    inputCheckPrice();
   }
 
 
@@ -66,24 +91,24 @@ export const FilterCatalog = memo((products:Product[] | []) => {
 
               <div className="CheckBox">
                 <div onClick={() => setCheckBox(range1, setRange1)}>
-                  <div className={range1} id="range1">
+                  <div className={range1}>
                     <span className="material-symbols-outlined">check</span>
                   </div>
-                  <label htmlFor="range1">300-900</label>
+                  <label htmlFor="range1">{objRange1.min}-{objRange1.max}</label>
                 </div>
 
                 <div onClick={() => setCheckBox(range2, setRange2)}>
-                  <div className={range2} id="range2">
+                  <div className={range2}>
                     <span className="material-symbols-outlined">check</span>
                   </div>
-                  <label htmlFor="range2">900-1500</label>
+                  <label htmlFor="range2">{objRange2.min}-{objRange2.max}</label>
                 </div>
 
                 <div onClick={() => setCheckBox(range3, setRange3)}>
-                  <div className={range3} id="range3">
+                  <div className={range3}>
                     <span className="material-symbols-outlined">check</span>
                   </div>
-                  <label htmlFor="range3">1500-2000</label>
+                  <label htmlFor="range3">{objRange3.min}-{objRange3.max}</label>
                 </div>
               </div>
             </div>
