@@ -41,18 +41,26 @@ export const FilterCatalog = memo((products:Product[] | []) => {
 
   let inputMin = useRef<HTMLInputElement>(null);
   let inputMax = useRef<HTMLInputElement>(null);
-  const inputCheckPrice = () => {
+
+  const checkBoxArr:Product[] = [];
+
+  const checkPrice = () => {
     let min = Number(inputMin.current!.value);
     let max = Number(inputMax.current!.value);
     
     if(!min || !max){
       console.log("inputs empty");
-      return
+      checkCheckBox(range1, objRange1);
+      checkCheckBox(range2, objRange2);
+      checkCheckBox(range3, objRange3);
+      productsAfterFilter = checkBoxArr;
     }else{
-      productsAfterFilter = productsAfterFilter.filter((el) => el.price >= min && el.price <= max);
+      productsAfterFilter = originalProducts.filter((el) => el.price >= min && el.price <= max);
       priceComparison(objRange1, setRange1);
       priceComparison(objRange2, setRange2);
       priceComparison(objRange3, setRange3);
+      inputMin.current!.value = "";
+      inputMax.current!.value = "";
     }
   }
 
@@ -62,11 +70,23 @@ export const FilterCatalog = memo((products:Product[] | []) => {
 
     if(objRange.min >= max || min >= objRange.max){
       setRange("checkBoxItemFalse");
+    }else{
+      setRange("checkBoxItemTrue");
+    }
+  }
+
+  const checkCheckBox = (range:string, objRange:{min:number, max:number}) => {
+    if(range === "checkBoxItemTrue"){
+      checkBoxArr.push(...originalProducts.filter((el) => el.price >= objRange.min && el.price <= objRange.max));
+    }else{
+      return
     }
   }
 
   const acceptPrice = () => {
-    inputCheckPrice();
+    checkPrice();
+    console.log(originalProducts);
+    console.log(productsAfterFilter);
   }
 
 
