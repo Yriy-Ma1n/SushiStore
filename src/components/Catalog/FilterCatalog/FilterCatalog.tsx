@@ -3,7 +3,12 @@ import "./FilterCatalog.css";
 import "./DropElement.css";
 import type { Product } from "../../../Types/Product";
 
+import { useDispatch } from "react-redux";
+import { setItems } from "../../../features/product/productSlice";
+
 export const FilterCatalog = memo((products:Product[] | []) => {
+  const dispatch = useDispatch();
+
   //для отоброжения выпадающего окна
   const [displayPrice, setDisplayPrice] = useState("none");
   const [displayCategory, setDisplayCategory] = useState("none");
@@ -49,7 +54,11 @@ export const FilterCatalog = memo((products:Product[] | []) => {
     let max = Number(inputMax.current!.value);
     
     if(!min || !max){
-      console.log("inputs empty");
+      if(range1 === "checkBoxItemTrue" && range2 === "checkBoxItemTrue" && range3 === "checkBoxItemTrue"){
+        productsAfterFilter = originalProducts;
+        return;
+      }
+
       checkCheckBox(range1, objRange1);
       checkCheckBox(range2, objRange2);
       checkCheckBox(range3, objRange3);
@@ -85,8 +94,7 @@ export const FilterCatalog = memo((products:Product[] | []) => {
 
   const acceptPrice = () => {
     checkPrice();
-    console.log(originalProducts);
-    console.log(productsAfterFilter);
+    dispatch(setItems(productsAfterFilter));
   }
 
 
