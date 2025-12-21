@@ -6,9 +6,17 @@ import type { Product } from "../../Types/Product";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { setItems } from "../../features/product/productSlice";
+import type { RootState } from "../../store";
+
 export const Catalog = memo(() => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const dispatch = useDispatch();
+
+  const products = useSelector((state: RootState) => state.product);
   let [renderProducts, setRenderProducts] = useState<Product[]>([]);
+  const [propData, setPropData] = useState<Product[]>([]);
   const [page, setPage] = useState(1);
   const limit: number = 12;
   const total: number = products.length;
@@ -20,9 +28,9 @@ export const Catalog = memo(() => {
       });
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
-      setProducts(data);
+      setPropData(data);
+      dispatch(setItems(data));
       setRenderProducts(products.slice(0, limit));
-      //console.log(data);
     } catch (err) {
       console.error(`Fetch reqest has problems:`, err);
     }
@@ -48,7 +56,7 @@ export const Catalog = memo(() => {
     <div className="CatalogSection">
       <div className="filterZone">
         <h1>Sushi</h1>
-        <FilterCatalog {...products} />
+        <FilterCatalog {...propData} />
       </div>
       <div className="productZone">
         {renderProducts.map((item) => (
